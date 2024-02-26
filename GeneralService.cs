@@ -1,8 +1,9 @@
 using System.Reflection;
+using Helper;
 
 namespace Service
 {
-	public class GeneralService
+	public class GeneralService : BaseService
 	{
 		private async Task<string> CallMe(string name)
 		{

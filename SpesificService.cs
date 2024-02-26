@@ -1,6 +1,8 @@
+using Helper;
+
 namespace Service
 {
-	public class SpesificService(string middleName)
+	public class SpesificService(string middleName) : BaseService
 	{
 		private async Task<string> CallMe(string name)
 		{
