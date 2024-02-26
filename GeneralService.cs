@@ -1,18 +1,27 @@
-using System.Reflection;
+using Helper;
 
 namespace Service
 {
-	public class GeneralService
+	public class GeneralService : BaseService
 	{
-		private async Task<string> CallMe(string name)
+		private async Task<string> HelloWorldString()
 		{
-			await Task.Delay(1000);
-			return $"{GetType().Name}: Hello " + name + "!";
+			return await Task.FromResult("Hello World!");
+		}
+		private async Task<string> HelloName(string name)
+		{
+			return await Task.FromResult($"Hello {name}!");
 		}
 
-		public async Task<string> PublicMethod()
+		private async Task<int> IntMethod()
 		{
-			return await Task.FromResult("PublicMethod");
+			return await Task.FromResult(1);
 		}
+
+		private async Task HelloWorldVoid()
+		{
+			await Task.Run(() => Console.WriteLine("Hello World!"));
+		}
+
 	}
 }
